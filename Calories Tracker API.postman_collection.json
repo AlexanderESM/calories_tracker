@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "e6de9fec-dbcf-4471-b389-b48aa828cde1",
+		"name": "Calories Tracker API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16553045"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Do3e\",\n  \"email\": \"john@example546.com\",\n  \"age\": 30,\n  \"weight\": 80,\n  \"height\": 175,\n  \"goal\": \"MAINTAIN_WEIGHT\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Foods",
+			"item": [
+				{
+					"name": "Create Food",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Chicken Salad\",\n  \"calories\": 250,\n  \"protein\": 20,\n  \"fat\": 10,\n  \"carbs\": 15\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/foods",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"foods"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Foods",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/foods",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"foods"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Meals",
+			"item": [
+				{
+					"name": "Create Meal",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": 1,\n  \"foodIds\": [1, 2, 3]\n}\n"
+						},
+						"url": {
+							"raw": "{{base_url}}/meals",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"meals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Meals",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/meals/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"meals",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "Get Daily Calories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/reports/1/daily-calories",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"reports",
+								"1",
+								"daily-calories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Daily Limit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/reports/1/within-daily-limit",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"reports",
+								"1",
+								"within-daily-limit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Meal History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/reports/1/meal-history",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"reports",
+								"1",
+								"meal-history"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
